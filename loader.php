@@ -44,7 +44,7 @@ function buddyforms_at_preview_add_tinymce($args) {
 add_action( 'buddyforms_create_edit_form_args', 'buddyforms_at_preview_add_tinymce' );
 
 function buddyforms_at_preview_add_tinymce_sidebar_metabox(){
-    add_meta_box('buddyforms_members', __("BP Member Profiles",'buddyforms'), 'buddyforms_at_preview_add_tinymce_sidebar_metabox_html', 'buddyforms', 'side', 'low');
+    add_meta_box('buddyforms_at_preview', __('Link Preview','buddyforms'), 'buddyforms_at_preview_add_tinymce_sidebar_metabox_html', 'buddyforms', 'side', 'low');
 }
 add_filter('add_meta_boxes','buddyforms_at_preview_add_tinymce_sidebar_metabox');
 
@@ -59,10 +59,10 @@ function buddyforms_at_preview_add_tinymce_sidebar_metabox_html($form, $selected
   $form_setup = array();
 
   $link_preview = '';
-  if(isset($buddyforms_options[$selected_form_slug]['link_preview']))
-      $link_preview = $buddyforms_options[$selected_form_slug]['link_preview'];
+  if(isset($buddyforms['link_preview']))
+      $link_preview = $buddyforms['link_preview'];
 
-  $form_setup[] = new Element_Checkbox("<b>" . __('Add Link Preview to TinyMCE', 'buddyforms') . "</b>", "buddyforms_options[".$selected_form_slug."][link_preview]", array("integrate" => "Add to TinyMCE"), array('value' => $link_preview));
+  $form_setup[] = new Element_Checkbox("<b>" . __('Add Link Preview to TinyMCE', 'buddyforms') . "</b>", "buddyforms_options[link_preview]", array("integrate" => "Add to TinyMCE"), array('value' => $link_preview));
 
   foreach($form_setup as $key => $field){
       echo '<div class="buddyforms_field_label">' . $field->getLabel() . '</div>';
