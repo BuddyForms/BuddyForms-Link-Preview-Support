@@ -4,7 +4,7 @@
  Plugin Name: BuddyForms Link Preview Support
  Plugin URI: http://themekraft.com/store/wordpress-front-end-editor-and-form-builder-buddyforms/
  Description: BuddyForms Link Preview Support
- Version: 1.0
+ Version: 1.1
  Author: Sven Lehnert
  Author URI: http://themekraft.com/members/svenl77/
  License: GPLv2 or later
