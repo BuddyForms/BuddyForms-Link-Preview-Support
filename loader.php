@@ -59,8 +59,8 @@ function buddyforms_at_preview_add_tinymce_sidebar_metabox_html($form, $selected
   $form_setup = array();
 
   $link_preview = '';
-  if(isset($buddyforms['link_preview']))
-      $link_preview = $buddyforms['link_preview'];
+  if(isset($buddyform['link_preview']))
+      $link_preview = $buddyform['link_preview'];
 
   $form_setup[] = new Element_Checkbox("<b>" . __('Add Link Preview to TinyMCE', 'buddyforms') . "</b>", "buddyforms_options[link_preview]", array("integrate" => "Add to TinyMCE"), array('value' => $link_preview));
 
